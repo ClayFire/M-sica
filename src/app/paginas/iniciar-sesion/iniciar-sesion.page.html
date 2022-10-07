@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back" [routerLink]="['']"></ion-icon>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-button id="open-modal" expand="block">Abrir inicio sesión</ion-button>
+    <p>{{ message }}</p>
+    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancelar</ion-button>
+            </ion-buttons>
+            <ion-title>Bienvenido</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-item>
+            <ion-label position="stacked">Ingrese su nombre</ion-label>
+            <ion-input type="text" placeholder="Nombre" [(ngModel)]="name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Ingresa tu contraseña</ion-label>
+            <ion-input type="text" placeholder="Contraseña" [(ngModel)]="password"></ion-input>
+
+            <ion-item>
+              <ion-checkbox slot="start"></ion-checkbox>
+              <ion-label>Acepto los términos y condiciones</ion-label>
+            </ion-item>
+
+            <!-- onclick -->
+            <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+
+            <ion-datetime
+            value="2022-04-21T00:00:00"
+            min="2022-03-01T00:00:00"
+            max="2022-05-31T23:59:59"
+            ></ion-datetime>
+
+
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-content>

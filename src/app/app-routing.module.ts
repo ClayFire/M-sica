@@ -2,14 +2,24 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
+
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: '', //url
+    loadChildren: () => import('./paginas/principal/principal.module').then( m => m.PrincipalPageModule )
+  },
+
+  {
+    path: 'categoria', //url
+    loadChildren: () => import('./paginas/categoria/categoria.module').then( m => m.CategoriaPageModule )
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'artistas', //url
+    loadChildren: () => import('./paginas/artistas/artistas.module').then( m => m.ArtistasPageModule)
+  },
+  {
+    path: 'iniciar-sesion',
+    loadChildren: () => import('./paginas/iniciar-sesion/iniciar-sesion.module').then( m => m.IniciarSesionPageModule)
   },
 ];
 

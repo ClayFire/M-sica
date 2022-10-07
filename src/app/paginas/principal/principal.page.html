@@ -1,0 +1,93 @@
+
+
+<ion-content>
+
+  <p>Bienvenido a la página principal de Música</p>
+
+      <button [routerLink]="['/categoria']">
+        Ir a las categorías de música
+      </button>
+
+
+      <!-- MENÚ -->
+
+      <ion-menu contentId="main-content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Menú Música</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+
+          <button [routerLink]="['/categoria']">
+            Categoría
+          </button>
+
+          <br> <hr>
+
+          <button [routerLink]="['/artistas']">
+            Artistas
+          </button>
+
+          <br> <hr>
+
+          <button [routerLink]="['/iniciar-sesion']">
+            Iniciar sesión
+          </button>
+
+        </ion-content>
+      </ion-menu>
+      <div class="ion-page" id="main-content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+            <ion-title>Música</ion-title>
+          </ion-toolbar>
+        </ion-header>
+
+      <!-- FIN MENÚ -->
+
+
+      <!-- INICIO SLIDE -->
+
+        <ion-content class="ion-padding">
+            <ion-slides pager="false" [options]="slideOpts">
+              <ion-slide style="margin-top:0px">
+                <!-- atributos para centrar el slide 1 en la presentación de la página -->
+                <ion-card>
+                  <ion-card-content>
+                  <ion-card-title>Bienvenido a la aplicación de música</ion-card-title>
+                  <img src="https://cdn.icon-icons.com/icons2/2775/PNG/512/listening_music_icon_176906.png" height="auto" width="auto">
+                  </ion-card-content>
+                </ion-card>
+
+              </ion-slide>
+              <ion-slide>
+                <ion-card>
+                  <ion-card-content>
+                    <ion-card-subtitle>Aquí podrás encontrar tus canciones y artistas favoritos</ion-card-subtitle>
+
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+              <ion-slide>
+                <ion-card>
+                  <ion-card-content>
+                    <ion-card-subtitle>
+                      Puedes encontrar distintas cosas que sirvan para tus gustos
+                    </ion-card-subtitle>
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+            </ion-slides>
+        </ion-content>
+
+
+      <!-- FIN SLIDE -->
+
+      </div>
+
+
+</ion-content>
